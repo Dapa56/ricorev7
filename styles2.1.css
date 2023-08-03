@@ -1,0 +1,133 @@
+:root {
+  --primary: #eb6a00;
+  --bg: #010101;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("img/darksand.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  font-family: "Poppins", sans-serif;
+}
+
+.container {
+  background-color: rgba(0, 0, 0, 0.78);
+  padding: 2rem;
+  border-radius: 8px;
+  color: #ffffff;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+.container .product .judul-product h1 {
+  font-size: 2rem;
+  margin: 0;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.container .product p {
+  font-size: 1.6rem;
+  text-align: center;
+  margin-bottom: 1rem;
+  line-height: 1.6;
+  font-weight: 100;
+}
+
+.harga h1,
+.judul-product h1 {
+  font-size: 2rem;
+  font-weight: bold;
+  color: white;
+  margin: 0 auto;
+  margin-top: 1rem;
+  text-align: center;
+}
+
+.container .product .product-stars .star-full {
+  fill: var(--primary);
+  color: var(--primary);
+}
+
+.container .product .product-stars {
+  font-size: 1.5rem;
+  padding: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.product button {
+  font-weight: bold;
+  font-size: 1.7rem;
+  width: 280px;
+  height: 110px;
+  padding: 0.8rem 1.5rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 25px;
+  cursor: pointer;
+  display: block;
+  margin: 0 auto;
+  margin-top: 1rem;
+}
+
+.product-button {
+  display: flex;
+  justify-content: center;
+  margin-top: 2rem;
+}
+.product-button a {
+  display: inline-block;
+  padding: 10px 20px;
+  font-size: 1.2rem;
+  background-color: var(--primary);
+  color: white;
+  border: none;
+  border-radius: 9px;
+  text-decoration: none;
+  cursor: pointer;
+}
+.product-button a:hover {
+  background-color: #835602;
+}
+
+.product-button span {
+  font-weight: lighter;
+  font-size: 1rem;
+}
+video {
+  max-width: 60%;
+  display: block;
+  margin: 0 auto;
+}
+
+button:hover {
+  background-color: #835602;
+}
+
+/* Tambahkan CSS lainnya sesuai kebutuhan */
+
+/*Laptop dan Tablet*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 80%;
+  }
+}
+
+/*Mobile*/
+@media (max-width: 768px) {
+  html {
+    font-size: 100%;
+  }
+  .container .product p {
+    font-size: 0.9rem;
+  }
+  video {
+    max-width: 100%;
+  }
+}

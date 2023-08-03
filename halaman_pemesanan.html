@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Form Pemesanan</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Gabriela&family=Poppins:wght@300;700&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="styles2.css" />
+  </head>
+  <body>
+    <div class="container">
+      <h1>Silahkan Isi Formulir Ini Sebelum Memesan</h1>
+      <form id="formulir">
+        <label for="nama">Nama Pemesan : </label>
+        <input type="text" id="Nama" required /><br />
+
+        <label for="tanggal">Waktu Acara : </label>
+        <input type="date" id="Tanggal" required /><br />
+
+        <label for="nama-buat">Nama yang akan dibuat : </label>
+        <input type="text" id="Nama-buat" required /><br />
+
+        <label for="paket">Pilih paket yang tersedia : </label>
+        <select name="paket" id="Nama-paket">
+          <option value="Paket A">Paket 1</option>
+          <option value="Paket B">Paket 2</option>
+          <option value="Paket C">Paket 3</option>
+          <option value="Paket D">Paket 4</option>
+          <option value="Paket E">Paket 5</option>
+          <option value="Paket F">Paket 6</option>
+          <option value="Paket Premium1">Paket Premium 1</option>
+          <option value="Paket Premium1">Paket Premium 1.1</option>
+          <option value="Paket Premium1">Paket Premium 1.2</option>
+          <option value="Paket Premium1">Paket Premium 1.3</option>
+          <option value="Paket Premium2">Paket Premium 2</option>
+          <option value="Paket Premium2">Paket Premium 2.1</option>
+          <option value="Paket Premium2">Paket Premium 2.2</option>
+          <option value="Paket Premium2">Paket Premium 2.3</option></select
+        ><br />
+
+        <label for="wa">Nomor wa : </label>
+        <input type="text" id="Wa" required /><br />
+
+        <label for="lagu-video">Lagu Untuk Video : </label>
+        <input type="text" id="Lagu-video" required /><br />
+
+        <label for="ucapan">Pilih tema ucapan : </label>
+        <div class="checkbox-container" id="Checkbox">
+          <div class="checkbox-item">
+            <input
+              type="checkbox"
+              id="umum"
+              name="pilihan[]"
+              value="Ulang tahun umum"
+            />
+            <label for="umum">Ulang tahun umum</label>
+            <input
+              type="checkbox"
+              id="umum"
+              name="pilihan[]"
+              value="Ulang tahun umum"
+            />
+            <label for="umum">Ulang tahun umum</label>
+            <input
+              type="checkbox"
+              id="umum"
+              name="pilihan[]"
+              value="Ulang tahun umum"
+            />
+            <label for="umum">Ulang tahun umum</label>
+          </div>
+          <!-- Tambahkan pilihan checkbox lainnya sesuai kebutuhan -->
+        </div>
+        <br />
+        <button type="button" onclick="whatsapp()">Kirim WhatsApp</button>
+        <script>
+          function whatsapp() {
+            var name = document.getElementById("Nama").value;
+            var tanggal = document.getElementById("Tanggal").value;
+            var nama_buat = document.getElementById("Nama-buat").value;
+            var nama_paket = document.getElementById("Nama-paket").value;
+            var wa = document.getElementById("Wa").value;
+            var lagu_video = document.getElementById("Lagu-video").value;
+            var sambutan =
+              "Perkenalkan Nama Saya " +
+              name +
+              "Halo Saya ingin Pesan Tulisan Pasirnya ya.\nBerikut adalah detail pemesanan Saya, Mohon Konfirmasinya di nomor whatsapp saya , Terimakasih :\n\n";
+
+            // Mengambil nilai checkbox yang dicentang
+            var checkboxes = document.querySelectorAll(
+              'input[name="pilihan[]"]:checked'
+            );
+            var tema_ucapan = Array.from(checkboxes).map(
+              (checkbox) => checkbox.value
+            );
+
+            var url = `https://wa.me/6281246002784?text=${encodeURIComponent(
+              sambutan
+            )}%0aNama : ${encodeURIComponent(
+              name
+            )}%0aTanggal : ${encodeURIComponent(
+              tanggal
+            )}%0aNama yang akan dibuat : ${encodeURIComponent(
+              nama_buat
+            )}%0aPaket yang dipilih : ${encodeURIComponent(
+              nama_paket
+            )}%0aNomer WhatsApp : ${encodeURIComponent(
+              wa
+            )}%0aLagu untuk video : ${encodeURIComponent(
+              lagu_video
+            )}%0aTema ucapan yang dipilih : ${encodeURIComponent(
+              tema_ucapan.join(", ")
+            )}`;
+
+            window.open(url, "_blank").focus();
+          }
+        </script>
+      </form>
+    </div>
+  </body>
+</html>

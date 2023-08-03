@@ -1,0 +1,89 @@
+:root {
+  --primary: #eb6a00;
+  --bg: #010101;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-image: url("img/xiaokang-zhang-bNQKQOmbfL8-unsplash.jpg");
+  background-attachment: fixed;
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background-color: #000000;
+  font-family: "Poppins", sans-serif;
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  scroll-behavior: smooth;
+}
+.container {
+  background-color: #ffffff;
+  padding: 6rem;
+  border-radius: 8px;
+  color: #000000;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+  text-align: center;
+  font-size: 1.6rem;
+  position: relative;
+  flex-wrap: wrap;
+  color: var(--primary);
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  padding: 0.2rem;
+}
+
+label {
+  margin-bottom: 8px;
+  padding: 0.2rem;
+}
+
+button {
+  padding: 1rem;
+  margin-top: 2rem;
+  margin-bottom: 1rem;
+  background-color: var(--primary);
+  color: #fff;
+  border: none;
+  border-radius: 9px;
+  cursor: pointer;
+}
+
+button:hover {
+  background-color: #835602;
+}
+
+/* Tambahkan CSS lainnya sesuai kebutuhan */
+
+/*Laptop*/
+@media (max-width: 1366px) {
+  html {
+    font-size: 75%;
+  }
+}
+
+/*Tablet*/
+@media (max-width: 768px) {
+  html {
+    font-size: 50%;
+  }
+}
+/*Mobile*/
+@media (max-width: 450px) {
+  html {
+    font-size: 50%;
+  }
+}
